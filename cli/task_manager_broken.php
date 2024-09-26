@@ -4,7 +4,7 @@ class Task {
     private $id;
     private $title;
 
-    public function __construct($id, $title) {
+    public function __construct($id, $title, $description) {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
@@ -54,6 +54,7 @@ function updateTask(&$tasks) {
 
     if (isset($tasks[$id])) {
         $newTitle = readline("Enter New Title: ");
+        $newDescription = readline("Enter New Description");
 
         $tasks[$id]->setTitle($newTitle);
         $tasks[$id]->setDescription($newDescription);
